@@ -1,0 +1,109 @@
+.Badge {
+  display: grid;
+  grid-template-rows: calc(2 * 144px / 2.54) calc(3.5 * 144px / 2.54);
+  grid-template-columns: calc(2.5 * 144px / 2.54) 1fr;
+  margin: calc(0.5 * 144px / 2.54);
+  width: calc(8.5 * 144px / 2.54);
+  height: calc(5.5 * 144px / 2.54);
+  border: 1px solid black;
+}
+
+.Badge--new-item {
+  display: flex;
+  border: 4px dashed #aaaaaa;
+  border-radius: calc(0.15 * 144px / 2.54);
+  box-sizing: border-box;
+}
+
+.plus-btn {
+  position: relative;
+  margin: auto;
+  width: calc(1.5 * 144px / 2.54);
+  height: calc(1.5 * 144px / 2.54);
+  border: 6px solid #999999;
+  transform-origin: center;
+  transform: rotate(0deg);
+  border-radius: 50%;
+  transition: 0.15s ease-in;
+  cursor: pointer;
+}
+
+.plus-btn:hover {
+  transform: rotate(180deg);
+  transition: 0.5s ease-out;
+}
+
+.plus-btn:hover, .plus-btn:hover::before, .plus-btn:hover::after {
+  border-color: #666666;
+}
+
+.plus-btn::before, .plus-btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: calc(1 * 144px / 2.54);
+  border: 5px solid #999999;
+  border-radius: 5px;
+  transition: 0.2s ease-in-out;
+}
+
+.plus-btn::before {
+  transform: translate(-50%, -50%);
+}
+
+.plus-btn::after {
+  transform: translate(-52.5%, -50%) rotate(90deg);
+}
+
+.Badge__field {
+  padding: 5px;
+  border: 1px solid black;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.Badge__field--photo {
+  background-size: cover;
+}
+
+.Badge__text {
+  margin: 1rem 0.5rem;
+  font-family: Arial, sans-serif;
+  font-size: 19px;
+  text-align: center;
+}
+
+h2.Badge__text {
+  font-size: 28px;
+}
+
+.Badge__field--logo {
+  background-image: url(rtrs-logo.png);
+  background-size: 95%;
+}
+
+.pass-number {
+  margin: 1rem 0;
+}
+
+.full-name {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.position {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+
+.director {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dir-name {
+  font-weight: bold;
+  font-style: italic;
+}
