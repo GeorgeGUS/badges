@@ -1,10 +1,12 @@
+@import "functions";
+
 .SheetA4 {
   display: flex;
-  padding: calc(0.5 * 144px / 2.54);
+  padding: sm(0.5);
   align-content: flex-start;
   flex-wrap: wrap;
-  width: calc(21 * 144px / 2.54);
-  height: calc(29.6 * 144px / 2.54);
+  width: sm(21);
+  height: sm(29.67);
   border: 1px solid black;
   box-sizing: border-box;
 }

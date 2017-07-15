@@ -1,16 +1,16 @@
 import React from 'react';
+import Logo from './Logo';
 import PassNumber from './PassNumber';
 import Photo from './Photo';
 import Employeer from './Employeer';
-import './Badge.css';
 
 function Badge(props) {
 	return (
 		<div className="Badge">
-			<div className="Badge__field Badge__field--logo"></div>
-			<PassNumber passNum={props.person.passNum}/>
-			<Photo photo={props.person.photo}/>
-			<Employeer fullName={props.person.fullName} position={props.person.position}/>
+			<Logo className="Badge__field" />
+			<PassNumber className="Badge__field" passNum={props.person.passNum} />
+			<Photo className="Badge__field" photo={props.person.photo} />
+			<Employeer className="Badge__field" fullName={props.person.fullName} position={props.person.position} />
 		</div>
 	);
 }

@@ -1,15 +1,15 @@
 import React from 'react';
 import Badge from './Badge';
-import AddNewBadge from './AddNewBadge';
+import NewBadge from './NewBadge';
 import data from './data';
-import './SheetA4.css';
+import './styles/_SheetA4.scss';
 
 function SheetA4() {
-	const badges = data.map((dataItem) => <Badge person={dataItem}/>);
+	const badges = data.map((dataItem) => <Badge key={dataItem.key} person={dataItem}/>);
 	return (
 		<div className="SheetA4">
 			{badges}
-			<AddNewBadge/>
+			<NewBadge />
 		</div>
 	);
 }

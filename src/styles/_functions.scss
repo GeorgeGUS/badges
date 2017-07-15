@@ -1,0 +1,3 @@
+@function sm($size) {
+	@return $size * 144px / 2.54;
+}

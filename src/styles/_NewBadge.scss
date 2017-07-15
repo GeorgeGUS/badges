@@ -1,0 +1,27 @@
+@import "functions";
+@import "mixins";
+
+.NewBadge {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	@include badgeSize;
+	border: 4px dashed #aaaaaa;
+	border-radius: sm(0.15);
+	box-sizing: border-box;
+}
+
+.plus-btn {
+	width: 120px;
+	height: 120px;
+	background-image: url("../images/icons/ic_add_circle_outline_black_48px.svg");
+	background-repeat: no-repeat;
+	background-size: contain;
+	transition: 0.3s ease;
+	cursor: pointer;
+
+	&:hover {
+		transform: rotate(90deg);
+		background-image: url("../images/icons/ic_add_circle_black_48px.svg");
+	}
+}

@@ -1,0 +1,53 @@
+@import "functions";
+@import "mixins";
+
+.Badge {
+  display: grid;
+  grid-template-rows: sm(2) sm(3.5);
+  grid-template-columns: sm(2.5) 1fr;
+	@include badgeSize;
+  border: 1px solid black;
+}
+
+.Badge__field {
+  padding: 5px;
+  border: 1px solid black;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.Badge__text {
+  margin: 1rem 0.5rem;
+  font-family: Arial, sans-serif;
+  font-size: 19px;
+  text-align: center;
+}
+
+h2.Badge__text {
+  font-size: 28px;
+}
+
+.pass-number {
+  margin: 1rem 0;
+}
+
+.full-name {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.profession {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+
+.director {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dir-name {
+  font-weight: bold;
+  font-style: italic;
+}
