@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import SheetA4 from './SheetA4';
+import SheetA4 from './components/SheetA4';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');

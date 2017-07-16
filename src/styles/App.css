@@ -1,3 +1,12 @@
+.icon {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer; }
+  .icon:active {
+    opacity: 0.5; }
+
 .SheetA4 {
   display: flex;
   padding: 28.34646px;
@@ -9,13 +18,34 @@
   box-sizing: border-box; }
 
 .Badge {
+  position: relative;
+  margin: 28.34646px;
+  width: 481.88976px;
+  height: 311.81102px; }
+
+.Badge__container {
   display: grid;
   grid-template-rows: 113.38583px 198.4252px;
   grid-template-columns: 141.73228px 1fr;
-  margin: 28.34646px;
-  width: 481.88976px;
-  height: 311.81102px;
   border: 1px solid black; }
+
+.Badge__delete-btn {
+  position: absolute;
+  top: 0;
+  right: 0; }
+  .Badge__delete-btn .delete-icon {
+    padding: 7px;
+    transition: 0.2s ease;
+    font-size: 35px;
+    color: #aaaaaa;
+    visibility: hidden; }
+
+.Badge__delete-btn:hover .delete-icon {
+  color: #666666;
+  visibility: visible; }
+
+.Badge__delete-btn:hover:active {
+  opacity: 0.5; }
 
 .Badge__field {
   padding: 5px;
@@ -80,15 +110,9 @@ h2.Badge__text {
   justify-content: center;
   align-items: center; }
 
-.PhotoBtn {
-  cursor: pointer; }
-
-#photoIcon {
-  width: 70px;
-  height: 70px;
-  fill: #9d9d9d;
+.PhotoBtn__icon {
+  font-size: 60px;
+  color: #9d9d9d;
   transition: 0.2s ease-in-out; }
-  #photoIcon:hover {
-    fill: #333333; }
-  #photoIcon:active {
-    opacity: 0.7; }
+  .PhotoBtn__icon:hover {
+    color: #333333; }

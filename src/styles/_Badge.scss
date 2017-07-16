@@ -2,11 +2,40 @@
 @import "mixins";
 
 .Badge {
+  position: relative;
+	@include badgeSize;
+}
+
+.Badge__container {
   display: grid;
   grid-template-rows: sm(2) sm(3.5);
   grid-template-columns: sm(2.5) 1fr;
-	@include badgeSize;
   border: 1px solid black;
+}
+
+.Badge__delete-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  .delete-icon {
+    padding: 7px;
+    transition: 0.2s ease;
+    font-size: 35px;
+    color: #aaaaaa;
+    visibility: hidden;
+  }
+}
+
+.Badge__delete-btn:hover {
+  .delete-icon {
+    color: #666666;
+    visibility: visible;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
 }
 
 .Badge__field {

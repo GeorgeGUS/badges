@@ -1,28 +1,28 @@
 const data = [
 	{
-		key: 1,
+		id: 1,
 		photo: 'photos/gus.jpg',
-		passNum: 45,
+		passNum: '45',
 		fullName: 'Гусаков Георгий Сергеевич',
-		position: 'Инженер'
+		profession: 'Инженер'
 	}, {
-		key: 2,
+		id: 2,
 		photo: 'photos/erm.jpg',
-		passNum: 72,
+		passNum: '72',
 		fullName: 'Ермолаев Александр Анатольевич',
-		position: 'Главный инженер'
+		profession: 'Главный инженер'
 	}, {
-		key: 3,
+		id: 3,
 		photo: 'photos/shab.jpg',
-		passNum: 71,
+		passNum: '71',
 		fullName: 'Шабунин Дмитрий Александрович',
-		position: 'Начальник цеха'
+		profession: 'Начальник цеха'
 	}, {
-		key: 4,
+		id: 4,
 		photo: '',
 		passNum: '',
 		fullName: '',
-		position: ''
+		profession: ''
 	}
 ];
 

@@ -2,7 +2,7 @@ import React from 'react';
 
 function Logo(props) {
 	const divStyle = {
-		backgroundImage: 'url(' + require('./images/rtrs-logo.png') + ')',
+		backgroundImage: 'url(' + require('../images/rtrs-logo.png') + ')',
 		backgroundSize: '95%'
 	};
 

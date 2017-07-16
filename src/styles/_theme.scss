@@ -1,0 +1,11 @@
+.icon {
+	margin: 0;
+	padding: 0;
+	background: none;
+	border: none;
+	cursor: pointer;
+
+	&:active {
+		opacity: 0.5;
+	}
+}
