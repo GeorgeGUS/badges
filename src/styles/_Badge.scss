@@ -18,7 +18,7 @@
   top: 0;
   right: 0;
 
-  .delete-icon {
+  .material-icons {
     padding: 7px;
     transition: 0.2s ease;
     font-size: 35px;
@@ -27,15 +27,9 @@
   }
 }
 
-.Badge__delete-btn:hover {
-  .delete-icon {
-    color: #666666;
-    visibility: visible;
-  }
-
-  &:active {
-    opacity: 0.5;
-  }
+.Badge__delete-btn:hover > .material-icons {
+  color: #666666;
+  visibility: visible;
 }
 
 .Badge__field {
@@ -44,6 +38,7 @@
   background-position: center;
   background-repeat: no-repeat;
 }
+
 
 .Badge__text {
   margin: 1rem 0.5rem;
@@ -54,6 +49,18 @@
 
 h2.Badge__text {
   font-size: 28px;
+}
+
+.Badge__input {
+  display: inline-block;
+  width: 100%;
+  font: inherit;
+  text-align: center;
+  border: 1px solid #aaaaaa;
+  border-radius: 2px;
+  &--number {
+    width: 4rem;
+  }
 }
 
 .pass-number {

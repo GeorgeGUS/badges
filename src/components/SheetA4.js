@@ -11,7 +11,26 @@ class SheetA4 extends React.Component {
 			data: this.props.initialData
 		};
 
+		this.handleAdd = this.handleAdd.bind(this);
 		this.handleDelete = this.handleDelete.bind(this);
+	}
+
+	nextId() {
+		this._nextId = this._nextId || 4;
+		return this._nextId++;
+	}
+
+
+	handleAdd() {
+		let dataItem = {
+			editing: true,
+			id: this.nextId(),
+			photo: ''
+		};
+
+		let data = [...this.state.data, dataItem];
+
+		this.setState({ data });
 	}
 
 	handleDelete(id) {
@@ -24,11 +43,12 @@ class SheetA4 extends React.Component {
 			<div className="SheetA4">
 				{this.state.data.map((dataItem) =>
 					<Badge
+						editing={dataItem.editing}
 						key={dataItem.id}
 						person={dataItem}
 						handleDeleteBtn={this.handleDelete}
 					/>)}
-				<NewBadge />
+				<NewBadge handleClick={this.handleAdd} />
 			</div>
 		);
 	}

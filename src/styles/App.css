@@ -1,10 +1,11 @@
-.icon {
+button {
   margin: 0;
   padding: 0;
   background: none;
   border: none;
+  outline: none;
   cursor: pointer; }
-  .icon:active {
+  button:active {
     opacity: 0.5; }
 
 .SheetA4 {
@@ -33,19 +34,16 @@
   position: absolute;
   top: 0;
   right: 0; }
-  .Badge__delete-btn .delete-icon {
+  .Badge__delete-btn .material-icons {
     padding: 7px;
     transition: 0.2s ease;
     font-size: 35px;
     color: #aaaaaa;
     visibility: hidden; }
 
-.Badge__delete-btn:hover .delete-icon {
+.Badge__delete-btn:hover > .material-icons {
   color: #666666;
   visibility: visible; }
-
-.Badge__delete-btn:hover:active {
-  opacity: 0.5; }
 
 .Badge__field {
   padding: 5px;
@@ -61,6 +59,16 @@
 
 h2.Badge__text {
   font-size: 28px; }
+
+.Badge__input {
+  display: inline-block;
+  width: 100%;
+  font: inherit;
+  text-align: center;
+  border: 1px solid #aaaaaa;
+  border-radius: 2px; }
+  .Badge__input--number {
+    width: 4rem; }
 
 .pass-number {
   margin: 1rem 0; }
@@ -93,26 +101,21 @@ h2.Badge__text {
   border-radius: 8.50394px;
   box-sizing: border-box; }
 
-.plus-btn {
-  width: 120px;
-  height: 120px;
-  background-image: url("../images/icons/ic_add_circle_outline_black_48px.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  transition: 0.3s ease;
-  cursor: pointer; }
-  .plus-btn:hover {
-    transform: rotate(90deg);
-    background-image: url("../images/icons/ic_add_circle_black_48px.svg"); }
+.plus-btn .material-icons {
+  font-size: 120px;
+  color: #9d9d9d;
+  transition: 0.3s ease; }
+  .plus-btn .material-icons:hover {
+    transform: rotate(90deg); }
 
 .Photo {
   display: flex;
   justify-content: center;
   align-items: center; }
 
-.PhotoBtn__icon {
+.Photo__btn .material-icons {
   font-size: 60px;
   color: #9d9d9d;
   transition: 0.2s ease-in-out; }
-  .PhotoBtn__icon:hover {
+  .Photo__btn .material-icons:hover {
     color: #333333; }

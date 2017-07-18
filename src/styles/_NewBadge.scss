@@ -11,17 +11,12 @@
 	box-sizing: border-box;
 }
 
-.plus-btn {
-	width: 120px;
-	height: 120px;
-	background-image: url("../images/icons/ic_add_circle_outline_black_48px.svg");
-	background-repeat: no-repeat;
-	background-size: contain;
+.plus-btn .material-icons {
+	font-size: 120px;
+	color: #9d9d9d;
 	transition: 0.3s ease;
-	cursor: pointer;
 
 	&:hover {
 		transform: rotate(90deg);
-		background-image: url("../images/icons/ic_add_circle_black_48px.svg");
 	}
 }

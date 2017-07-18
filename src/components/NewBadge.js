@@ -1,9 +1,11 @@
 import React from 'react';
+import Button from './Button';
+
 
 function NewBadge(props) {
 	return (
 		<div className="NewBadge">
-			<div className="plus-btn" title="Создать новый бэйдж"> </div>
+			<Button className="plus-btn" icon="add_circle_outline" title="Создать новый бэйдж" onClick={props.handleClick} />
 		</div>
 	);
 }
