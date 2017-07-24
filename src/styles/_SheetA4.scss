@@ -9,4 +9,9 @@
   height: sm(29.67);
   border: 1px solid black;
   box-sizing: border-box;
+
+  @media print {
+    border: none;
+  }
 }
+

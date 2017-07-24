@@ -1,15 +1,14 @@
 .Photo {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  display: flex;
+  background-color: #fff;
 }
 
 .Photo__btn .material-icons {
-	font-size: 60px;
-	color: #9d9d9d;
-	transition: 0.2s ease-in-out;
+  font-size: 60px;
+  color: #9d9d9d;
+  transition: 0.2s ease-in-out;
 
-	&:hover {
-		color: #333333;
-	}
+  &:hover {
+    color: #333333;
+  }
 }

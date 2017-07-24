@@ -2,21 +2,25 @@
 @import "mixins";
 
 .NewBadge {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	@include badgeSize;
-	border: 4px dashed #aaaaaa;
-	border-radius: sm(0.15);
-	box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include badgeSize;
+  border: 4px dashed #aaaaaa;
+  border-radius: sm(0.15);
+  box-sizing: border-box;
+
+  @media print {
+    visibility: hidden;
+  }
 }
 
 .plus-btn .material-icons {
-	font-size: 120px;
-	color: #9d9d9d;
-	transition: 0.3s ease;
+  font-size: 120px;
+  color: #9d9d9d;
+  transition: 0.3s ease;
 
-	&:hover {
-		transform: rotate(90deg);
-	}
+  &:hover {
+    transform: rotate(90deg);
+  }
 }

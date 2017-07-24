@@ -3,7 +3,7 @@
 
 .Badge {
   position: relative;
-	@include badgeSize;
+  @include badgeSize;
 }
 
 .Badge__container {
@@ -11,25 +11,34 @@
   grid-template-rows: sm(2) sm(3.5);
   grid-template-columns: sm(2.5) 1fr;
   border: 1px solid black;
+  box-sizing: border-box;
 }
 
-.Badge__delete-btn {
+.Badge__controls {
   position: absolute;
+  display: inline-flex;
+  flex-direction: column;
   top: 0;
-  right: 0;
+  right: -37px;
+  border: 2px solid #aaaaaa;
+  border-radius: 0 4px 4px 0;
+  border-left: none;
 
-  .material-icons {
-    padding: 7px;
+  @media print {
+    visibility: hidden;
+  }
+
+  button > .material-icons {
     transition: 0.2s ease;
     font-size: 35px;
     color: #aaaaaa;
-    visibility: hidden;
   }
 }
 
-.Badge__delete-btn:hover > .material-icons {
-  color: #666666;
-  visibility: visible;
+.Badge__controls {
+  button:hover > .material-icons {
+    color: #666666;
+  }
 }
 
 .Badge__field {
@@ -38,7 +47,6 @@
   background-position: center;
   background-repeat: no-repeat;
 }
-
 
 .Badge__text {
   margin: 1rem 0.5rem;
