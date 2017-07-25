@@ -4,6 +4,12 @@ import "./styles/App.css";
 import data from "./data";
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    localStorage.clear();
+  }
+
   render() {
     return (
       <div className="App">

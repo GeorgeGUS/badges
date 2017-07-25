@@ -24,6 +24,7 @@ class SheetA4 extends React.Component {
   handleSubmit(id, inputs, save) {
     let data = this.state.data.map(dataItem => {
       if (dataItem.id === id) {
+        dataItem.photo = inputs.photo;
         dataItem.passNum = inputs.passNum;
         dataItem.fullName = inputs.fullName;
         dataItem.profession = inputs.profession;
@@ -40,8 +41,7 @@ class SheetA4 extends React.Component {
   handleAdd() {
     let dataItem = {
       editing: true,
-      id: this.nextId(),
-      photo: ""
+      id: this.nextId()
     };
 
     let data = [...this.state.data, dataItem];
@@ -51,6 +51,7 @@ class SheetA4 extends React.Component {
 
   handleDelete(id) {
     let data = this.state.data.filter(data => data.id !== id);
+    localStorage.removeItem("photo_" + id);
     this.setState({ data });
   }
 

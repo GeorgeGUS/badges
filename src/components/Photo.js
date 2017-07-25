@@ -5,7 +5,7 @@ function Photo(props) {
   const background =
     props.photo === ""
       ? "#dddddd"
-      : "url(" + require("../images/" + props.photo) + ")";
+      : "url(" + props.photo + ")";
 
   const divStyle = {
     boxShadow: "inset 0 0 1px 1px #ffffff",

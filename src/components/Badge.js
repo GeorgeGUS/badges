@@ -16,18 +16,28 @@ class Badge extends React.Component {
     };
 
     this.handleEdit = this.handleEdit.bind(this);
+    this.handleImage = this.handleImage.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleSave = this.handleSave.bind(this);
   }
 
   handleEdit(evt) {
+    evt.stopPropagation();
     evt.preventDefault();
     this.setState({ editing: true });
+  }
+
+  handleImage(url) {
+    if (typeof url !== "undefined" && url.slice(0, 4) === "data") {
+      console.log({ url });
+      return { url };
+    }
   }
 
   handleSubmit(evt) {
     evt.preventDefault();
     let inputs = {
+      photo: localStorage.getItem("photo_"+this.props.person.id),
       passNum: this.refs.passNumber.value,
       fullName: this.refs.fullName.value,
       profession: this.refs.profession.value
@@ -73,22 +83,18 @@ class Badge extends React.Component {
                 type="text"
                 ref="passNumber"
                 defaultValue={this.props.person.passNum}
+                required
               />
             </label>
           </h2>
         </div>
 
-        <ImportPhoto className="Badge__field Photo"/>
+        {/*TODO: Придумать способ передачи данных в инпут или другое  */}
 
-        {/* <div className="Badge__field Photo">
-          TODO: Дописать функционал вставки и сохранения фото при редактировании бэйджа  
-           <Button
-            className="Photo__btn"
-            title="Добавить фото"
-            icon="add_a_photo"
-            type="button"
-          />           
-        </div> */}
+        <ImportPhoto
+          className="Badge__field Photo"
+          id={this.props.person.id}
+        />
 
         <div className="Badge__field">
           <h2 className="Badge__text full-name">
@@ -98,6 +104,7 @@ class Badge extends React.Component {
               ref="fullName"
               defaultValue={this.props.person.fullName}
               placeholder="ФИО сотрудника"
+              required
             />
           </h2>
           <p className="Badge__text profession">
@@ -107,6 +114,7 @@ class Badge extends React.Component {
               ref="profession"
               defaultValue={this.props.person.profession}
               placeholder="должность"
+              required
             />
           </p>
           <div className="director">
@@ -165,7 +173,8 @@ Badge.propTypes = {
     fullName: PropTypes.string.isRequired,
     profession: PropTypes.string.isRequired
   }).isRequired,
-  editing: PropTypes.bool
+  editing: PropTypes.bool,
+  imageUrl: PropTypes.func
 };
 
 export default Badge;

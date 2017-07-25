@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 class ImportPhoto extends React.Component {
   constructor(props) {
@@ -6,8 +7,14 @@ class ImportPhoto extends React.Component {
 
     this.state = {
       file: "",
+      divStyle: {
+        backgroundImage: "url()",
+        backgroundSize: "cover"
+      },
       result: ""
     };
+
+    console.log({ result: this.state.result });
 
     this.handleFileSelect = this.handleFileSelect.bind(this);
     this.handleDragOver = this.handleDragOver.bind(this);
@@ -57,17 +64,26 @@ class ImportPhoto extends React.Component {
       let reader = new FileReader();
 
       reader.onloadend = function() {
-        this.setState({ result: reader.result }, this.renderImage);
+        this.setState(
+          { result: reader.result },
+          this.renderImage,
+          this.getImageUrl
+        );
       }.bind(this);
       reader.readAsDataURL(this.state.file);
     }
   }
 
   renderImage() {
-    return {
-      backgroundImage: "url(" + this.state.result + ")",
-      backgroundSize: "cover"
-    };
+    // Сохранение фотоданных в локальное хранилище
+    localStorage.setItem('photo_'+this.props.id, this.state.result);
+    
+    this.setState({
+      divStyle: {
+        backgroundImage: "url(" + this.state.result + ")",
+        backgroundSize: "cover"
+      }
+    });
   }
 
   render() {
@@ -75,7 +91,7 @@ class ImportPhoto extends React.Component {
       <div
         className={this.props.className}
         id="drop_zone"
-        style={this.renderImage()}
+        style={this.state.divStyle}
         onDragOver={this.handleDragOver}
         onDrop={this.handleFileDrop}
       >
@@ -93,5 +109,16 @@ class ImportPhoto extends React.Component {
     );
   }
 }
+
+ImportPhoto.PropTypes = {
+  file: PropTypes.node.isRequired,
+  result: PropTypes.string.isRequired,
+  exportUrl: PropTypes.func.isRequired,
+  className: PropTypes.string.isRequired,
+  style: PropTypes.object.isRequired,
+  onDragOver: PropTypes.func.isRequired,
+  onDrop: PropTypes.func.isRequired,
+  onChange: PropTypes.func.isRequired
+};
 
 export default ImportPhoto;
