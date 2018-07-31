@@ -91,7 +91,7 @@ class Badge extends React.Component {
 					</p>
 					<div className="director">
 						<span className="Badge__text dir-name">Директор</span>
-						<span className="Badge__text dir-name">С.Я. Якушев</span>
+						<span className="Badge__text dir-name">__________</span>
 					</div>
 				</div>
 			</div>
